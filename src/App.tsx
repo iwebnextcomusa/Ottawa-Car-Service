@@ -332,7 +332,7 @@ export default function App() {
                   <div>
                     <div className="relative h-56 overflow-hidden">
                       <img 
-                        src={fleet.image} 
+                        src="https://nh1aol3a9xo1sy2o.public.blob.vercel-storage.com/Three_car_images_Ottawa_2K_202607090137.jpeg" 
                         alt={fleet.name} 
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
@@ -893,7 +893,7 @@ export default function App() {
                       <div>
                         <div className="h-48 overflow-hidden relative">
                           <img 
-                            src={fleet.image} 
+                            src="https://nh1aol3a9xo1sy2o.public.blob.vercel-storage.com/SUV_images_for_chauffeur_company_202607090139.jpeg" 
                             alt={fleet.name} 
                             referrerPolicy="no-referrer"
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
