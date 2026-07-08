@@ -20,7 +20,9 @@ import {
   Check,
   Map,
   Plus,
-  Minus
+  Minus,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 
 import Header from './components/Header';
@@ -34,6 +36,7 @@ import { FLEET_DATA, SERVICES_DATA, TESTIMONIALS_DATA, FAQ_DATA, ONTARIO_SERVICE
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [activeFAQ, setActiveFAQ] = useState<string | null>('faq1');
+  const [isMuted, setIsMuted] = useState(true);
   const [contactForm, setContactForm] = useState<ContactMessage>({
     name: '',
     email: '',
@@ -79,7 +82,7 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className="relative overflow-hidden border border-white/10 shadow-2xl">
                 <img 
-                  src="/src/assets/images/professional_chauffeur_1783538516107.jpg" 
+                  src="https://nh1aol3a9xo1sy2o.public.blob.vercel-storage.com/AU.jpg" 
                   alt="Professional Chauffeur in Ontario" 
                   referrerPolicy="no-referrer"
                   className="w-full h-[400px] object-cover"
@@ -696,18 +699,39 @@ export default function App() {
             >
               {/* Full-width Luxury Hero Section */}
               <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-brand-dark">
-                {/* Background Hero Image with Dark Gradient overlays */}
+                {/* Background Hero Video with Dark Gradient overlays */}
                 <div className="absolute inset-0 z-0">
-                  <img 
-                    src="/src/assets/images/luxury_sedan_hero_1783538488375.jpg" 
-                    alt="Ottawa Car Service Black Sedan" 
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover filter brightness-[0.3]"
+                  <video 
+                    src="https://nh1aol3a9xo1sy2o.public.blob.vercel-storage.com/Create_video_Ottawa_Car_Service_202607090128.mp4" 
+                    autoPlay
+                    loop
+                    muted={isMuted}
+                    playsInline
+                    className="w-full h-full object-cover filter brightness-[0.45]"
                   />
                   {/* Grid overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-[#050d17]/80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-[#050d17]/80" />
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#111111]/70 to-[#111111]" />
                 </div>
+
+                {/* Video Mute/Unmute toggle */}
+                <button
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="absolute bottom-8 right-8 z-20 bg-black/70 hover:bg-black/90 text-white p-3 border border-white/10 hover:border-brand-gold/50 transition-all flex items-center gap-2 cursor-pointer font-mono text-[10px] uppercase tracking-widest group"
+                  aria-label={isMuted ? "Unmute video background" : "Mute video background"}
+                >
+                  {isMuted ? (
+                    <>
+                      <VolumeX className="w-4 h-4 text-brand-gold group-hover:scale-110 transition-transform" />
+                      <span>Sound Off</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-4 h-4 text-brand-gold group-hover:scale-110 transition-transform" />
+                      <span>Sound On</span>
+                    </>
+                  )}
+                </button>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8 py-20">
                   <motion.div
