@@ -1,0 +1,6 @@
+{
+  "name": "Ottawa Car Service",
+  "description": "Premium luxury private chauffeur and airport transportation services throughout Ontario, Canada. Specialized in executive travel, airport transfers, and long-distance transfers between Ottawa and Toronto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
